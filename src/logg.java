@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class logg {
     public static void main(String[] args) {
@@ -25,11 +27,15 @@ public class logg {
             System.out.println("1");
             System.out.println(log);
         } else if (answer.equals("2")) {
+            LocalDateTime tid = LocalDateTime.now();
+            DateTimeFormatter formtid =
+                    DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
             System.out.println("2");
             System.out.println("namn?");
             Scanner input = new Scanner(System.in);
             String namn = input.nextLine();
-            log.add(namn);
+            String formattedDate = tid.format(formtid);
+            log.add(namn + " " + formattedDate);
             System.out.println(log);
         } else if (answer.equals("6")) {
             System.out.println("6");
