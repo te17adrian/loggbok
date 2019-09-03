@@ -10,18 +10,18 @@ public class logg {
 
         while (w > 0) {
             String answer = meny();
-            val(answer,log);
+            w = val(answer,log);
         }
 
     }
 
     private static String meny() {
-        System.out.println("Vad vill du göra?" + "\n" + "1: Visa loggboken" + "\n" + "2: Skriv in en ny post i loggboken" +"\n" + "6. Avsluta" );
+        System.out.println("Vad vill du göra?" + "\n" + "1: Visa loggboken" + "\n" + "2: Skriv in en ny post i loggboken" +"\n"+ "3.Redigera en gammal post i loggboken" + "\n" + "4.Spara loggboken" + "\n" + "5.Läs in en loggbok" + "\n" + "6. Avsluta" );
         Scanner input = new Scanner(System.in);
         return input.nextLine();
     }
 
-    private static void val(String answer, ArrayList<String> log) {
+    private static int val(String answer, ArrayList<String> log) {
 
         if (answer.equals("1")) {
             System.out.println("1");
@@ -37,10 +37,17 @@ public class logg {
             String formattedDate = tid.format(formtid);
             log.add(namn + " " + formattedDate);
             System.out.println(log);
-        } else if (answer.equals("6")) {
-            System.out.println("6");
-            System.exit(0);
 
+        } else if (answer.equals("3")) {
+            System.out.println("3");
+        } else if (answer.equals("4")) {
+            System.out.println("4");
+        } else if (answer.equals("5")) {
+            System.out.println("5");
+        } else if (answer.equals("6")) {
+            System.out.println("Hej då");
+                return 0;
         }
+        return 1;
     }
 }
