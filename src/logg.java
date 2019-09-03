@@ -3,9 +3,13 @@ import java.util.ArrayList;
 
 public class logg {
     public static void main(String[] args) {
-        String answer = meny();
-        val(answer);
+        int w = 1;
+        ArrayList<String> log = new ArrayList<>();
 
+        while (w > 0) {
+            String answer = meny();
+            val(answer,log);
+        }
 
     }
 
@@ -15,18 +19,20 @@ public class logg {
         return input.nextLine();
     }
 
-    private static void val(String answer) {
-        ArrayList<String> log = new ArrayList<>();
+    private static void val(String answer, ArrayList<String> log) {
 
         if (answer.equals("1")) {
-            System.out.println("test1");
+            System.out.println("1");
             System.out.println(log);
         } else if (answer.equals("2")) {
-            System.out.println("test2");
+            System.out.println("2");
+            System.out.println("namn?");
             Scanner input = new Scanner(System.in);
-
+            String namn = input.nextLine();
+            log.add(namn);
+            System.out.println(log);
         } else if (answer.equals("6")) {
-            System.out.println("test6");
+            System.out.println("6");
             System.exit(0);
 
         }
