@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -28,6 +30,9 @@ public class LogEntry {
 
     @Override
     public String toString() {
+        LocalDateTime tid = LocalDateTime.now();
+        DateTimeFormatter formtid =
+                DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
         return "LogEntry{" + "createdAt=" + createdAt
                 + ", updatedAt=" + updatedAt + ", message='" + message + '\'' + '}';
     }
