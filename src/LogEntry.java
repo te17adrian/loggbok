@@ -1,21 +1,16 @@
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
+
 public class LogEntry {
-    private String createdAt;
+    private Date createdAt;
     private Date updatedAt;
     private String message;
     // Optional ArrayList<LogEntry> history;
 
     public LogEntry(String message) {
-        LocalDateTime tid = LocalDateTime.now();
-        DateTimeFormatter formtid =
-                DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-        String formattedDate = tid.format(formtid);
         this.message = message;
-        createdAt = formattedDate ;
+        createdAt = new Date();
         updatedAt = new Date();
     }
 
